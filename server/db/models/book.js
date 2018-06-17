@@ -7,7 +7,7 @@ const Book = db.define('book', {
     allowNull: false
   },
   description: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false
   },
   author: {
@@ -19,7 +19,14 @@ const Book = db.define('book', {
     allowNull: false
   },
   sentiment: {
-    type: Sequelize.DOUBLE
+    type: Sequelize.DOUBLE,
+    allowNull: false
+  },
+  image: {
+    type: Sequelize.STRING
+  },
+  amazonUrl: {
+    type: Sequelize.STRING
   }
 })
 
