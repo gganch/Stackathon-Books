@@ -1,9 +1,17 @@
 body {
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
+  font-family: 'Quicksand', sans-serif;
+
 }
 
 a {
   text-decoration: none;
+}
+
+p {
+  /* font-family: 'Roboto Condensed', sans-serif; */
+  font-family: 'Montserrat', sans-serif;
+
 }
 
 label {
@@ -19,3 +27,24 @@ form div {
   margin: 1em;
   display: inline-block;
 }
+
+.left-container {
+  border-left: 3px solid;
+  background-color: whitesmoke;
+}
+
+.book-cover {
+  max-height: 500px;
+}
+
+.but {
+  background: none;
+  border: none;
+}
+
+.big-row {
+  background-color: antiquewhite;
+
+}
+
+
