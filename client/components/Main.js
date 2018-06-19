@@ -14,7 +14,7 @@ class Main extends Component {
     super()
     this.state = {
       books: [],
-      view: 'positive'
+      view: 'none'
     }
   }
 
@@ -35,26 +35,33 @@ class Main extends Component {
 
   render() {
     return (
-      <div className='row big-row'>
-        <div className="col s6 m4 center ">
-          <h2>How Are you feeling today?</h2>
-          <button className='but' onClick={this.handleClick.bind(this, 'negative')} type='button'>
-            <i name="negative" className="large material-icons">sentiment_very_satisfied</i>
-          </button>
-          <button className='but' name="neutral" onClick={this.handleClick.bind(this, 'neutral')} type='button'>
-            <i className="large material-icons">sentiment_neutral</i>
-          </button>
-          <button className='but' name="positive" onClick={this.handleClick.bind(this, 'positive')} type='button'>
-            <i className="large material-icons">sentiment_very_dissatisfied</i>
-          </button>
+      <div>
+
+        <div className='row big-row'>
+          <div className=" z-depth-2 zz col s12 m12 center ">
+
+            <h2>How Are you feeling today?</h2>
+            <button className='but waves-effect waves-default' onClick={this.handleClick.bind(this, 'negative')} type='button'>
+              <i name="negative" className="large material-icons">sentiment_very_satisfied</i>
+            </button>
+            <button className='but waves-effect waves-light' name="neutral" onClick={this.handleClick.bind(this, 'neutral')} type='button'>
+              <i className=" large material-icons">sentiment_neutral</i>
+            </button>
+            <button className='but waves-effect waves-light' name="positive" onClick={this.handleClick.bind(this, 'positive')} type='button'>
+              <i className="large material-icons">sentiment_very_dissatisfied</i>
+            </button>
+          </div>
         </div>
-        <div className="col s6 m8 left-container">
-          <h2>Your Recommendations</h2>
-          <h4>Click A Mood To Get Started! </h4>
-          <hr />
-          {this.state.view === 'negative' && (<SadBooks books={this.state.books} />)}
-          {this.state.view === 'neutral' ? <NeutralBooks books={this.state.books} /> : null}
-          {this.state.view === 'positive' ? (<HappyBooks books={this.state.books} />) : null}
+        <div className='row'>
+          <div className="col s12 m12 left-container">
+            <h4>Your Recommendations</h4>
+            <hr />
+            {this.state.view === 'none' ? <h5>Click a Mood To Get Started</h5> : null}
+
+            {this.state.view === 'negative' && (<SadBooks books={this.state.books} />)}
+            {this.state.view === 'neutral' ? <NeutralBooks books={this.state.books} /> : null}
+            {this.state.view === 'positive' ? (<HappyBooks books={this.state.books} />) : null}
+          </div>
         </div>
       </div>
     )
